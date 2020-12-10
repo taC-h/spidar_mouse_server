@@ -1,0 +1,14 @@
+[package]
+name = "spidar_mouse_server"
+version = "0.1.0"
+authors = ["taC-h <taC.handstandingcat@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "3.3.0"
+actix-web-actors = "*"
+serde = "*"
+serde_json = "*"
+actix = "0.10.0"
