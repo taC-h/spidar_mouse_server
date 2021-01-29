@@ -1,9 +1,6 @@
 # spridar_mouse_server
 
 # Usage
-
-手っ取り早く：release.zipを解凍し、使用
-
 ビルドして使用：
 rustのインストール https://www.rust-lang.org/ja/tools/install
 
