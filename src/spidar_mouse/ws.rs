@@ -21,14 +21,16 @@ impl StreamHandler<Result<ws::Message, ws::ProtocolError>> for SpidarWs {
     ) {
         let (result,message) = match msg {
             Ok(ws::Message::Text(text)) => {
+                println!("text:{}",text);
                 let json_struct: Result<RequestBody, serde_json::Error> = serde_json::from_str(&text);
                 match json_struct {
                     Ok(t) => t.run(),
                     Err(e) => (false, e.to_string()),
                 }
             },
-            _ => (false, "not text".to_string()),
+            _ => (false, "invalid status".to_string()),
         };
+        println!("{}", message);
         let json_str = serde_json::to_string(&ResponseBody{result,message}).unwrap();
         ctx.text(json_str)
     }

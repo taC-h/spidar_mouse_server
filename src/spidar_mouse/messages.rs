@@ -54,7 +54,7 @@ impl RequestBody{
             },
             RequestBody::SetForce{Force_X, Force_Y, duration} => {
                 set_force(Force_X, Force_Y , duration);
-                (true, format!("func:SetForce\nrecived:{},{},{}", Force_X, Force_Y, duration))
+                (true, format!("func:SetForce\nrecived:{:.2},{:.2},{}", Force_X, Force_Y, duration))
             },
             RequestBody::SetMinForceDuty{MinForceDuty} => {
                 set_min_force_duty(MinForceDuty);
@@ -62,7 +62,7 @@ impl RequestBody{
             }
             RequestBody::SetDutyOnCh{ duty1, duty2, duty3, duty4, duration } => {
                 set_duty_on_ch(duty1, duty2, duty3, duty4, duration);
-                (true, format!("func:SetForce\nrecived:{},{},{},{},{}", duty1, duty2, duty3, duty4, duration))
+                (true, format!("func:SetDutyOnCh\nrecived:{:.2},{:.2},{:.2},{:.2},{}", duty1, duty2, duty3, duty4, duration))
             }
         }
     }
